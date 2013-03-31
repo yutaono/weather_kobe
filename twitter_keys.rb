@@ -1,0 +1,20 @@
+@@CONSUMER_KEY = "kYERrHlNJbUFPqfsxe5AXA"
+@@CONSUMER_SECRET = "ztmv065SHwlVFviav096o6UqJUuQkDT2vil0O8Lu0"
+@@ACCESS_TOKEN = "1295960960-FaEHVZf3SY6m1Jq0iVoOs9X8eh6kLxvmkiyjdTJ"
+@@ACCESS_TOKEN_SECRET = "hdWh3VfdcIMQwqzXkt646ND9ygNQfM7fVOdJ1k6GrA4"
+
+def getCK
+  return @@CONSUMER_KEY
+end
+
+def getCS
+  return @@CONSUMER_SECRET
+end
+
+def getAT
+  return @@ACCESS_TOKEN
+end
+
+def getATS
+  return @@ACCESS_TOKEN_SECRET
+end
