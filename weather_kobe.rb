@@ -118,7 +118,7 @@ fol = Twitter.friend_ids(USER_NAME).ids
 fan = follower - fol
 fan.each do |f|
   name = Twitter.user(f)["screen_name"]
-#  Twitter.follow(f)
+  Twitter.follow(f)
 end
 
 
