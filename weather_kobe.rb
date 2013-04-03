@@ -17,10 +17,6 @@ Twitter.configure do |cnf|
   cnf.oauth_token_secret = getATS()
 end
 
-def str_from_end(string, n)
-  return string[string.length-n..string.length]
-end
-
 def ignore_html_tag(string)
   string.gsub!(/<("[^"]*"|'[^']*'|[^'">])*>/, "")
 end
@@ -30,7 +26,7 @@ def getChanceOfRainfall(iday)
   rss = RSS::Parser.parse(uri, false)
   str = rss.channel.item(0).description
   tenki = ignore_html_tag(str).split("%")
-  return str_from_end(tenki[iday], 2)
+  return tenki[iday][-2..-1]
 end
 
 def forecast(iday)
@@ -65,7 +61,7 @@ def forecast(iday)
     if(l.include?(preday))
       preday_info = l.chomp.split(",")
     end
-    if(l.include?(theday))
+    if(l.include?(theday) && iday==1)
       para = true
     end
   end
@@ -107,7 +103,7 @@ today = Time.now
 if today.hour < 12
   Twitter.update(forecast(0))
 #  p forecast(0)
-else
+elsif
   Twitter.update(forecast(1))
 #  p forecast(1)
 end
